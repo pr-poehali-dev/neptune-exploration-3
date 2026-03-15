@@ -57,15 +57,16 @@ export default function ShaderBackground({ children }: ShaderBackgroundProps) {
         </defs>
       </svg>
 
-      {/* Background Shaders */}
+      {/* Background Shaders — светлый режим: зелено-белый */}
       <MeshGradient
-        className="absolute inset-0 w-full h-full"
-        colors={["#000000", "#8b5cf6", "#ffffff", "#1e1b4b", "#4c1d95"]}
-        speed={0.3}
+        className="absolute inset-0 w-full h-full dark:opacity-0 transition-opacity duration-700"
+        colors={["#ffffff", "#4ade80", "#bbf7d0", "#f0fdf4", "#16a34a"]}
+        speed={0.5}
       />
+      {/* Background Shaders — тёмный режим: зелено-чёрный */}
       <MeshGradient
-        className="absolute inset-0 w-full h-full opacity-60"
-        colors={["#000000", "#ffffff", "#8b5cf6", "#000000"]}
+        className="absolute inset-0 w-full h-full opacity-0 dark:opacity-100 transition-opacity duration-700"
+        colors={["#000000", "#14532d", "#052e16", "#166534", "#000000"]}
         speed={0.2}
       />
 
